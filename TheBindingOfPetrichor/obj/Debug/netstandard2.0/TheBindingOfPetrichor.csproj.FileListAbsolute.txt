@@ -1,0 +1,10 @@
+C:\Users\Jasen Lee\source\repos\TheBindingOfPetrichor\TheBindingOfPetrichor\bin\Debug\netstandard2.0\TheBindingOfPetrichor.deps.json
+C:\Users\Jasen Lee\source\repos\TheBindingOfPetrichor\TheBindingOfPetrichor\bin\Debug\netstandard2.0\TheBindingOfPetrichor.dll
+C:\Users\Jasen Lee\source\repos\TheBindingOfPetrichor\TheBindingOfPetrichor\bin\Debug\netstandard2.0\TheBindingOfPetrichor.pdb
+C:\Users\Jasen Lee\source\repos\TheBindingOfPetrichor\TheBindingOfPetrichor\obj\Debug\netstandard2.0\TheBindingOfPetrichor.csproj.AssemblyReference.cache
+C:\Users\Jasen Lee\source\repos\TheBindingOfPetrichor\TheBindingOfPetrichor\obj\Debug\netstandard2.0\TheBindingOfPetrichor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jasen Lee\source\repos\TheBindingOfPetrichor\TheBindingOfPetrichor\obj\Debug\netstandard2.0\TheBindingOfPetrichor.AssemblyInfoInputs.cache
+C:\Users\Jasen Lee\source\repos\TheBindingOfPetrichor\TheBindingOfPetrichor\obj\Debug\netstandard2.0\TheBindingOfPetrichor.AssemblyInfo.cs
+C:\Users\Jasen Lee\source\repos\TheBindingOfPetrichor\TheBindingOfPetrichor\obj\Debug\netstandard2.0\TheBindingOfPetrichor.csproj.CoreCompileInputs.cache
+C:\Users\Jasen Lee\source\repos\TheBindingOfPetrichor\TheBindingOfPetrichor\obj\Debug\netstandard2.0\TheBindingOfPetrichor.dll
+C:\Users\Jasen Lee\source\repos\TheBindingOfPetrichor\TheBindingOfPetrichor\obj\Debug\netstandard2.0\TheBindingOfPetrichor.pdb

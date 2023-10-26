@@ -1,0 +1,34 @@
+ManifestFileVersion: 0
+CRC: 1630385264
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 2d276b4b98d009e88bbb551bd8e9b338
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 1fe3abd029edb3522ae5dbbc711d0a74
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Materials/Item/WhoreOfBabylon/Whore_Of_Babylon_Icon_29.png
+- Assets/Models/Prefabs/Whore.prefab
+Dependencies: []
