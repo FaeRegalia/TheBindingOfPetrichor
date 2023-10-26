@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using BepInEx.Configuration;
@@ -22,11 +22,11 @@ namespace TheBindingOfPetrichor.Items
 
         public override string ItemPickupDesc => "Gain a significant damage boost at low health";
 
-        public override string ItemFullDescription => "Upon reaching low health, gain up to 300% damage boost";
+        public override string ItemFullDescription => "Upon reaching low health, gain a 500% damage boost";
 
         public override string ItemLore => "And the woman was arrayed in purple and scarlet colour, and decked with gold and precious stones and pearls, having a golden cup in her hand full of abominations and filthiness of her fornication";
 
-        public override ItemTier Tier => ItemTier.Tier1;
+        public override ItemTier Tier => ItemTier.Tier3;
 
         public override GameObject ItemModel => MainAssets.LoadAsset<GameObject>("Whore.prefab");
 
@@ -35,6 +35,8 @@ namespace TheBindingOfPetrichor.Items
         public static GameObject itemBodyModelPrefab;
 
         public ItemDef itemDef = ScriptableObject.CreateInstance<ItemDef>();
+
+        public int ChatAmount = 0;
 
         public override ItemDisplayRuleDict CreateItemDisplayRules()
         {
@@ -70,28 +72,36 @@ namespace TheBindingOfPetrichor.Items
 
         public override void CreateConfig(ConfigFile config)
         {
-            DamageBoost = config.Bind<float>("Item " + ItemName, "Damage Boost At Low Health", 3.0f, "Percentage of damage boost");
+            DamageBoost = config.Bind<float>("Item " + ItemName, "Damage Boost At Low Health", 5.0f, "Percentage of damage boost");
 
         }
 
         public override void Hooks()
         {
-            On.RoR2.HealthComponent.UpdateLastHitTime += GiveDamageBoost;
-        }
-
-        private void GiveDamageBoost(On.RoR2.HealthComponent.orig_UpdateLastHitTime orig, RoR2.HealthComponent self, float damageValue, Vector3 damagePosition, bool damageIsSilent, GameObject attacker)
-        {
-            orig.Invoke(self, damageValue, damagePosition, damageIsSilent, attacker);
-            if (NetworkServer.active && (bool)self && (bool)self.body && ItemBase<WhoreOfBabylon>.instance.GetCount(self.body) > 0 && self.isHealthLow)
-            {
-                RecalculateStatsAPI.GetStatCoefficients += AddDamage;
-            }
+            RecalculateStatsAPI.GetStatCoefficients += AddDamage; 
         }
 
         private void AddDamage(CharacterBody self, RecalculateStatsAPI.StatHookEventArgs args)
         {
-            args.damageMultAdd += DamageBoost.Value * self.inventory.GetItemCount(itemDef);
-        }
 
+            var stack = GetCount(self);
+            var healthComponent = self.healthComponent;
+            if (healthComponent.combinedHealthFraction <= 0.50f)
+            {
+                args.damageMultAdd += 5.0f * stack;
+                self.AddBuff()
+
+                if (ChatAmount == 0)
+                {
+                    ChatAmount = 1;
+                    Chat.AddMessage("What a horrible night to have a curse...");
+                }
+            }
+            if (healthComponent.combinedHealthFraction > 0.50f) 
+            {
+                ChatAmount = 0;
+            }
+
+        }
     }
 }
